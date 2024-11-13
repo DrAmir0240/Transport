@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from Users.models import CustomUser, MainManager, Manager, Driver, Customer
+from Users.models import CustomUser, MainManager, Manager, Driver, Customer, CustomerImage, DriverImage, ManagerImage
 
 
 # Register your models here.
@@ -26,6 +26,11 @@ class ManagerAdmin(admin.ModelAdmin):
     ordering = ('full_name',)
 
 
+@admin.register(ManagerImage)
+class ManagerImageAdmin(admin.ModelAdmin):
+    list_display = ('manager_assigned', 'image', 'uploaded_at')
+
+
 @admin.register(Driver)
 class DriverAdmin(admin.ModelAdmin):
     list_display = ('full_name', 'drive_license_id', 'debt_balance', 'rate')
@@ -33,8 +38,18 @@ class DriverAdmin(admin.ModelAdmin):
     ordering = ('full_name',)
 
 
+@admin.register(DriverImage)
+class DriverImageAdmin(admin.ModelAdmin):
+    list_display = ('driver', 'image', 'uploaded_at')
+
+
 @admin.register(Customer)
 class CustomerAdmin(admin.ModelAdmin):
     list_display = ('full_name', 'social_security_number', 'wallet_balance')
     search_fields = ('social_security_number', 'full_name')
     ordering = ('full_name',)
+
+
+@admin.register(CustomerImage)
+class CustomerImageAdmin(admin.ModelAdmin):
+    list_display = ('customer', 'image', 'uploaded_at')

@@ -1,6 +1,7 @@
 asgiref==3.8.1
 Django==5.1.3
-django-autoslug==1.9.9
-psycopg-binary==3.2.3
+django-autoslug @ file:///home/amirtheengineer/Downloads/django_autoslug-1.9.9-py2.py3-none-any.whl
+pillow @ file:///home/amirtheengineer/Downloads/pillow-11.0.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
+psycopg @ file:///home/amirtheengineer/Downloads/psycopg-3.2.3-py3-none-any.whl
 sqlparse==0.5.1
 typing_extensions==4.12.2
