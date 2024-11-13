@@ -15,4 +15,6 @@ class TransportCar(models.Model):
     model = models.CharField(max_length=120)
     type = models.CharField(max_length=120, choices=('trailer', 'commune', 'truck'))
     owner = models.CharField(max_length=120, choices=('company', 'driver'))
-    transport_type = models.CharField(max_length=120, choices=(Category.objects.all()))
+    transport_type = models.ForeignKey(Category, on_delete=models.DO_NOTHING)
+    def __str__(self):
+        return self.license_plate
